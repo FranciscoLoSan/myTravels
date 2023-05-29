@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoDestinosTable extends Migration
+class CreateClimaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class CreateTipoDestinosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_destinos', function (Blueprint $table) {
+        Schema::create('clima', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion', 40);
+            $table->string('clima', 50);
             $table->timestamps();
         });
     }
@@ -27,6 +27,6 @@ class CreateTipoDestinosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_destinos');
+        Schema::dropIfExists('clima');
     }
 }

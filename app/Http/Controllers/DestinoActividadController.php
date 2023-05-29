@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tipo_viaje;
+use App\Models\Destino_Actividad;
 use Illuminate\Http\Request;
 
-class TipoViajeController extends Controller
+class DestinoActividadController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TipoViajeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tipo_viaje  $tipo_viaje
+     * @param  \App\Models\Destino_Actividad  $destino_Actividad
      * @return \Illuminate\Http\Response
      */
-    public function show(tipo_viaje $tipo_viaje)
+    public function show(Destino_Actividad $destino_Actividad)
     {
         //
     }
@@ -52,10 +52,10 @@ class TipoViajeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\tipo_viaje  $tipo_viaje
+     * @param  \App\Models\Destino_Actividad  $destino_Actividad
      * @return \Illuminate\Http\Response
      */
-    public function edit(tipo_viaje $tipo_viaje)
+    public function edit(Destino_Actividad $destino_Actividad)
     {
         //
     }
@@ -64,10 +64,10 @@ class TipoViajeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tipo_viaje  $tipo_viaje
+     * @param  \App\Models\Destino_Actividad  $destino_Actividad
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tipo_viaje $tipo_viaje)
+    public function update(Request $request, Destino_Actividad $destino_Actividad)
     {
         //
     }
@@ -75,10 +75,10 @@ class TipoViajeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\tipo_viaje  $tipo_viaje
+     * @param  \App\Models\Destino_Actividad  $destino_Actividad
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tipo_viaje $tipo_viaje)
+    public function destroy(Destino_Actividad $destino_Actividad)
     {
         //
     }

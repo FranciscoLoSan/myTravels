@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Viaje;
+use App\Models\Ambiente;
 use Illuminate\Http\Request;
 
-class ViajeController extends Controller
+class AmbienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class ViajeController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Viaje  $viaje
+     * @param  \App\Models\Ambiente  $ambiente
      * @return \Illuminate\Http\Response
      */
-    public function show(Viaje $viaje)
+    public function show(Ambiente $ambiente)
     {
         //
     }
@@ -52,10 +52,10 @@ class ViajeController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Viaje  $viaje
+     * @param  \App\Models\Ambiente  $ambiente
      * @return \Illuminate\Http\Response
      */
-    public function edit(Viaje $viaje)
+    public function edit(Ambiente $ambiente)
     {
         //
     }
@@ -64,10 +64,10 @@ class ViajeController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Viaje  $viaje
+     * @param  \App\Models\Ambiente  $ambiente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Viaje $viaje)
+    public function update(Request $request, Ambiente $ambiente)
     {
         //
     }
@@ -75,10 +75,10 @@ class ViajeController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Viaje  $viaje
+     * @param  \App\Models\Ambiente  $ambiente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Viaje $viaje)
+    public function destroy(Ambiente $ambiente)
     {
         //
     }

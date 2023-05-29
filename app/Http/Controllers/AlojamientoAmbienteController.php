@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\tipo_destino;
+use App\Models\Alojamiento_Ambiente;
 use Illuminate\Http\Request;
 
-class TipoDestinoController extends Controller
+class AlojamientoAmbienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class TipoDestinoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\tipo_destino  $tipo_destino
+     * @param  \App\Models\Alojamiento_Ambiente  $alojamiento_Ambiente
      * @return \Illuminate\Http\Response
      */
-    public function show(tipo_destino $tipo_destino)
+    public function show(Alojamiento_Ambiente $alojamiento_Ambiente)
     {
         //
     }
@@ -52,10 +52,10 @@ class TipoDestinoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\tipo_destino  $tipo_destino
+     * @param  \App\Models\Alojamiento_Ambiente  $alojamiento_Ambiente
      * @return \Illuminate\Http\Response
      */
-    public function edit(tipo_destino $tipo_destino)
+    public function edit(Alojamiento_Ambiente $alojamiento_Ambiente)
     {
         //
     }
@@ -64,10 +64,10 @@ class TipoDestinoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\tipo_destino  $tipo_destino
+     * @param  \App\Models\Alojamiento_Ambiente  $alojamiento_Ambiente
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, tipo_destino $tipo_destino)
+    public function update(Request $request, Alojamiento_Ambiente $alojamiento_Ambiente)
     {
         //
     }
@@ -75,10 +75,10 @@ class TipoDestinoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\tipo_destino  $tipo_destino
+     * @param  \App\Models\Alojamiento_Ambiente  $alojamiento_Ambiente
      * @return \Illuminate\Http\Response
      */
-    public function destroy(tipo_destino $tipo_destino)
+    public function destroy(Alojamiento_Ambiente $alojamiento_Ambiente)
     {
         //
     }

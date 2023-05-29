@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pais;
+use App\Models\Usuario_Destino;
 use Illuminate\Http\Request;
 
-class PaisController extends Controller
+class UsuarioDestinoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class PaisController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Pais  $pais
+     * @param  \App\Models\Usuario_Destino  $usuario_Destino
      * @return \Illuminate\Http\Response
      */
-    public function show(Pais $pais)
+    public function show(Usuario_Destino $usuario_Destino)
     {
         //
     }
@@ -52,10 +52,10 @@ class PaisController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Pais  $pais
+     * @param  \App\Models\Usuario_Destino  $usuario_Destino
      * @return \Illuminate\Http\Response
      */
-    public function edit(Pais $pais)
+    public function edit(Usuario_Destino $usuario_Destino)
     {
         //
     }
@@ -64,10 +64,10 @@ class PaisController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Pais  $pais
+     * @param  \App\Models\Usuario_Destino  $usuario_Destino
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Pais $pais)
+    public function update(Request $request, Usuario_Destino $usuario_Destino)
     {
         //
     }
@@ -75,10 +75,10 @@ class PaisController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Pais  $pais
+     * @param  \App\Models\Usuario_Destino  $usuario_Destino
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Pais $pais)
+    public function destroy(Usuario_Destino $usuario_Destino)
     {
         //
     }

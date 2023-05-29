@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Estado;
+use App\Models\Destino_Alojamiento;
 use Illuminate\Http\Request;
 
-class EstadoController extends Controller
+class DestinoAlojamientoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class EstadoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Destino_Alojamiento  $destino_Alojamiento
      * @return \Illuminate\Http\Response
      */
-    public function show(Estado $estado)
+    public function show(Destino_Alojamiento $destino_Alojamiento)
     {
         //
     }
@@ -52,10 +52,10 @@ class EstadoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Destino_Alojamiento  $destino_Alojamiento
      * @return \Illuminate\Http\Response
      */
-    public function edit(Estado $estado)
+    public function edit(Destino_Alojamiento $destino_Alojamiento)
     {
         //
     }
@@ -64,10 +64,10 @@ class EstadoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Destino_Alojamiento  $destino_Alojamiento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Estado $estado)
+    public function update(Request $request, Destino_Alojamiento $destino_Alojamiento)
     {
         //
     }
@@ -75,10 +75,10 @@ class EstadoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Estado  $estado
+     * @param  \App\Models\Destino_Alojamiento  $destino_Alojamiento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Estado $estado)
+    public function destroy(Destino_Alojamiento $destino_Alojamiento)
     {
         //
     }

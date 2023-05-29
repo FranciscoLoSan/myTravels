@@ -2,24 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Usuario as Usuario;
+use App\Models\Clima;
 use Illuminate\Http\Request;
 
-class UsuarioController extends Controller
+class ClimaController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function nuevoUsuario(){
-        return view('usuarios.registro_usuario');
-    }
     public function index()
     {
-        $users = Usuario::all();
-        return $users;
+        //
     }
 
     /**
@@ -27,16 +22,9 @@ class UsuarioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function guardarUsuario(Request $request)
+    public function create()
     {
-        $usuario = new Usuario();
-        $usuario->nombre = $request->nombre;
-        $usuario->telefono = $request->telefono;
-        $usuario->correo = $request->correo;
-        $usuario->usuario = $request->usuario;
-        $usuario->pass = $request->pass;
-        
-        $usuario->save();
+        //
     }
 
     /**
@@ -53,10 +41,10 @@ class UsuarioController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Usuario  $usuario
+     * @param  \App\Models\Clima  $clima
      * @return \Illuminate\Http\Response
      */
-    public function show(Usuario $usuario)
+    public function show(Clima $clima)
     {
         //
     }
@@ -64,10 +52,10 @@ class UsuarioController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Usuario  $usuario
+     * @param  \App\Models\Clima  $clima
      * @return \Illuminate\Http\Response
      */
-    public function edit(Usuario $usuario)
+    public function edit(Clima $clima)
     {
         //
     }
@@ -76,10 +64,10 @@ class UsuarioController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Usuario  $usuario
+     * @param  \App\Models\Clima  $clima
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Usuario $usuario)
+    public function update(Request $request, Clima $clima)
     {
         //
     }
@@ -87,10 +75,10 @@ class UsuarioController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Usuario  $usuario
+     * @param  \App\Models\Clima  $clima
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Usuario $usuario)
+    public function destroy(Clima $clima)
     {
         //
     }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePaisTable extends Migration
+class CreateDestinoAlojamientoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreatePaisTable extends Migration
      */
     public function up()
     {
-        Schema::create('pais', function (Blueprint $table) {
+        Schema::create('destino_alojamiento', function (Blueprint $table) {
             $table->id();
-            $table->string('descripcion', 40);
-            $table->string('codigo', 4);
+            $table->bigInteger('id_usuario');
+            $table->bigInteger('id_alojamiento');
+            $table->bigInteger('id_destino');
+            $table->integer('calificacion');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreatePaisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pais');
+        Schema::dropIfExists('destino_alojamiento');
     }
 }
