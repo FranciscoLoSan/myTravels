@@ -23,6 +23,9 @@ class CreateUsuarioDestinoTable extends Migration
             $table->unsignedDecimal('cantidad_gastada', $precision = 8, $dec = 2);
             $table->text('motivo');
             $table->timestamps();
+
+            $table->foreign('id_usuario')->references('id')->on('usuario');
+            $table->foreign('id_destino')->references('id')->on('destino');
         });
     }
 

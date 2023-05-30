@@ -15,9 +15,12 @@ class CreateDestinoClimaTable extends Migration
     {
         Schema::create('destino_clima', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_clima');
-            $table->bigInteger('id_destino');
+            $table->unsignedBigInteger('id_clima');
+            $table->unsignedBigInteger('id_destino');
             $table->timestamps();
+
+            $table->foreign('id_clima')->references('id')->on('clima');
+            $table->foreign('id_destino')->references('id')->on('destino');
         });
     }
 

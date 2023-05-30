@@ -15,11 +15,15 @@ class CreateDestinoAlojamientoTable extends Migration
     {
         Schema::create('destino_alojamiento', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_usuario');
-            $table->bigInteger('id_alojamiento');
-            $table->bigInteger('id_destino');
+            $table->unsignedBigInteger('id_usuario');
+            $table->unsignedBigInteger('id_alojamiento');
+            $table->unsignedBigInteger('id_destino');
             $table->integer('calificacion');
             $table->timestamps();
+
+            $table->foreign('id_usuario')->references('id')->on('usuario');
+            $table->foreign('id_alojamiento')->references('id')->on('alojamiento');
+            $table->foreign('id_destino')->references('id')->on('destino');
         });
     }
 

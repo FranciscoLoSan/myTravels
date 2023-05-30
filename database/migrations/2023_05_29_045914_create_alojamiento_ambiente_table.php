@@ -15,9 +15,12 @@ class CreateAlojamientoAmbienteTable extends Migration
     {
         Schema::create('alojamiento_ambiente', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('id_alojamiento');
-            $table->bigInteger('id_ambiente');
+            $table->unsignedBigInteger('id_alojamiento');
+            $table->unsignedBigInteger('id_ambiente');
             $table->timestamps();
+
+            $table->foreign('id_alojamiento')->references('id')->on('alojamiento');
+            $table->foreign('id_ambiente')->references('id')->on('ambiente');
         });
     }
 
