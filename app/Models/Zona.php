@@ -2,10 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Zona extends Model
 {
-    use HasFactory;
+    protected $table = 'zona';
+    protected $primaryKey = 'id';
+    protected $dates = ['deleted_at'];
+
+    protected $fillable = [
+        'id', 
+        'zona'
+    ];
+
+    protected $hidden = [];
+
+    protected $appends = ['full_name'];
 }

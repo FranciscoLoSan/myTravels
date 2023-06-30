@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Usuario as Usuario;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -13,8 +14,9 @@ class UsuarioController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function nuevoUsuario(){
-        return view('usuarios.registro_usuario');
+    public function nuevoUsuario()
+    {
+        // return view('usuarios.registro_usuario');
     }
     public function index()
     {
@@ -29,13 +31,34 @@ class UsuarioController extends Controller
      */
     public function guardarUsuario(Request $request)
     {
+        // $validated = $request->validate([
+        //     'nombre' => 'required|unique:posts|max:30',
+        //     'apellido_p' => 'required|unique:posts|max:30',
+        //     'apellido_m' => 'required|unique:posts|max:30',
+        //     'correo' => 'required|unique:App\Models\Usuario,correo|unique:posts|max:100',
+        //     'pass' => 'required|unique:posts|max:32',
+        //     'estado_civil' => 'required',
+        //     'ciudad' => 'required|unique:posts|max:75',
+        //     'fecha_nacimiento' => 'required',
+        //     'actividad1' => 'required',
+        //     'actividad2' => 'required',
+        //     'actividad3' => 'required',
+        // ]);
+
+        $passwordHash = Hash::make($request->pass);
         $usuario = new Usuario();
         $usuario->nombre = $request->nombre;
-        $usuario->telefono = $request->telefono;
+        $usuario->apellido_p = $request->apellido_p;
+        $usuario->apellido_m = $request->apellido_m;
         $usuario->correo = $request->correo;
-        $usuario->usuario = $request->usuario;
-        $usuario->pass = $request->pass;
-        
+        $usuario->pass = $passwordHash;
+        $usuario->estado_civil = $request->estado_civil;
+        $usuario->ciudad = $request->ciudad;
+        $usuario->fecha_nacimiento = $request->fecha_nacimiento;
+        $usuario->actividad1 = $request->actividad1;
+        $usuario->actividad2 = $request->actividad2;
+        $usuario->actividad3 = $request->actividad3;
+
         $usuario->save();
     }
 

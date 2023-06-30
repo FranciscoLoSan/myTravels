@@ -2,84 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Actividad;
+use App\Models\Actividad as Actividad;
 use Illuminate\Http\Request;
 
 class ActividadController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        //
+        $actividades = Actividad::all();
+        return $actividades;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    public function guardarActividad(Request $request)
     {
-        //
+        $actividad = new Actividad();
+        $actividad->actividad = $request->actividad;
+
+        $actividad->save();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
+    public function editarActividad(Request $request)
     {
-        //
+        $actividad = Actividad::where('id', $request->id)->first();
+        return $actividad;
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Actividad  $actividad
-     * @return \Illuminate\Http\Response
-     */
-    public function show(Actividad $actividad)
+    public function modificarActividad(Request $request)
     {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Actividad  $actividad
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Actividad $actividad)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Actividad  $actividad
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Actividad $actividad)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Actividad  $actividad
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Actividad $actividad)
-    {
-        //
+        actividad::where('id', $request->id)
+            ->update([
+                'actividad' => $request->actividad,
+            ]);
     }
 }

@@ -2,10 +2,23 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Alojamiento extends Model
-{
-    use HasFactory;
+{   
+    protected $table = 'alojamiento';
+    protected $primaryKey = 'id';
+    protected $dates = ['deleted_at'];
+
+    protected $fillable = [
+        'id', 
+        'nombre', 
+        'calle', 
+        'numero'
+    ];
+
+    protected $hidden = [];
+
+    protected $appends = ['full_name'];
+
 }

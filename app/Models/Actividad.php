@@ -2,10 +2,20 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Model as Model;
 
 class Actividad extends Model
 {
-    use HasFactory;
+    protected $table = 'actividad';
+    protected $primaryKey = 'id';
+    protected $dates = ['deleted_at'];
+
+    protected $fillable = [
+        'id', 
+        'actividad'
+    ];
+
+    protected $hidden = [];
+
+    protected $appends = ['full_name'];
 }
