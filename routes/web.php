@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LogController as Log;
+use App\Http\Controllers\LoginController as Login;
 use App\Http\Controllers\UsuarioController as Usuario;
 /*
 |--------------------------------------------------------------------------
@@ -19,12 +19,11 @@ Route::get('/', function () {
 });
 
 /*  Inicio y cierre de session de usuario  *//*  Inicio y cierre de session de usuario  *//*  Inicio y cierre de session de usuario  */
-Route::post('login/', [Log::class, 'login'])->name('Iniciar_Sesión');
+Route::get('Login/AutenticarUsuario', 'LoginController@login')->name('Iniciar_Sesion');
+Route::get('Login/CerrarSesion', 'LoginController@showLogin')->name('Cerrar_Sesion');
 // Route::post('usuario/logout', 'LogController@logoutUsuario')->name('Cerrar_Sesión');
 
 /* Control de usarios*//* Control de usarios*//* Control de usarios*//* Control de usarios*//* Control de usarios*//* Control de usarios*/
 //route::get('usuario/registro', [Usuario::class, 'nuevoUsuario'])->name('Registro_Usuario');
 route::post('/usuario/guardarUsuario', [Usuario::class, 'guardarUsuario'])->name('Guardar_Usuario');
 route::get('/usuarios', [Usuario::class, 'index'])->name('Usuarios');
-
-
