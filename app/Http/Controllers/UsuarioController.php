@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Usuario as Usuario;
+use Error;
+use ErrorException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Response;
 
 class UsuarioController extends Controller
 {
@@ -31,6 +35,42 @@ class UsuarioController extends Controller
      */
     public function guardarUsuario(Request $request)
     {
+        $validated = validator::make($request->all(), [
+            'nombre' => 'required|max:30',
+            'apellido_p' => 'required|max:30',
+            'apellido_m' => 'required|max:30',
+            'correo' => 'required|unique:App\Models\Usuario,correo|max:100',
+            'pass' => 'required|max:32',
+            'estado_civil' => 'required',
+            'ciudad' => 'required|max:75',
+            'fecha_nacimiento' => 'required',
+            'actividad1' => 'required',
+            'actividad2' => 'required',
+            'actividad3' => 'required',
+        ]);
+        if ($validated->fails()) {
+            $returnData = array(
+                'status' => 'error',
+                'message' => json_encode($validated->errors())
+            );
+            return Response::json($returnData, 400);
+        } else {
+            $passwordHash = Hash::make($request->pass);
+            $usuario = new Usuario();
+            $usuario->nombre = $request->nombre;
+            $usuario->apellido_p = $request->apellido_p;
+            $usuario->apellido_m = $request->apellido_m;
+            $usuario->correo = $request->correo;
+            $usuario->pass = $passwordHash;
+            $usuario->estado_civil = $request->estado_civil;
+            $usuario->ciudad = $request->ciudad;
+            $usuario->fecha_nacimiento = $request->fecha_nacimiento;
+            $usuario->actividad1 = $request->actividad1;
+            $usuario->actividad2 = $request->actividad2;
+            $usuario->actividad3 = $request->actividad3;
+            $usuario->save();
+        }
+
         // $validated = $request->validate([
         //     'nombre' => 'required|unique:posts|max:30',
         //     'apellido_p' => 'required|unique:posts|max:30',
@@ -45,21 +85,22 @@ class UsuarioController extends Controller
         //     'actividad3' => 'required',
         // ]);
 
-        $passwordHash = Hash::make($request->pass);
-        $usuario = new Usuario();
-        $usuario->nombre = $request->nombre;
-        $usuario->apellido_p = $request->apellido_p;
-        $usuario->apellido_m = $request->apellido_m;
-        $usuario->correo = $request->correo;
-        $usuario->pass = $passwordHash;
-        $usuario->estado_civil = $request->estado_civil;
-        $usuario->ciudad = $request->ciudad;
-        $usuario->fecha_nacimiento = $request->fecha_nacimiento;
-        $usuario->actividad1 = $request->actividad1;
-        $usuario->actividad2 = $request->actividad2;
-        $usuario->actividad3 = $request->actividad3;
+        // $passwordHash = Hash::make($request->pass);
+        // $usuario = new Usuario();
+        // $usuario->nombre = $request->nombre;
+        // $usuario->apellido_p = $request->apellido_p;
+        // $usuario->apellido_m = $request->apellido_m;
+        // $usuario->correo = $request->correo;
+        // $usuario->pass = $passwordHash;
+        // $usuario->estado_civil = $request->estado_civil;
+        // $usuario->ciudad = $request->ciudad;
+        // $usuario->fecha_nacimiento = $request->fecha_nacimiento;
+        // $usuario->actividad1 = $request->actividad1;
+        // $usuario->actividad2 = $request->actividad2;
+        // $usuario->actividad3 = $request->actividad3;
 
-        $usuario->save();
+        // $usuario->save();
+
     }
 
     /**
