@@ -55,7 +55,7 @@ class UsuarioController extends Controller
             );
             return Response::json($returnData, 400);
         } else {
-            $passwordHash = Hash::make($request->pass);
+            $passwordHash = bcrypt($request->pass);
             $usuario = new Usuario();
             $usuario->nombre = $request->nombre;
             $usuario->apellido_p = $request->apellido_p;
